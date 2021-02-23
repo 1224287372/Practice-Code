@@ -8,7 +8,12 @@ public class ListNode {
         val = x;
     }
 
-    //    快慢指针获取链表中间节点
+    /**
+     * 利用快慢指针获取链表中间节点
+     *
+     * @param head 链表头
+     * @return 中间节点
+     */
     public static ListNode middleNode(ListNode head) {
         /*
          *快慢指针，前面是慢指针一次走一个节点，快指针一次走两个节点，
