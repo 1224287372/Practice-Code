@@ -1,5 +1,7 @@
 package com.yym.util;
 
+import com.yym.practice.PracticeGenerics;
+
 public class ListNode {
     int val;
     ListNode next;
