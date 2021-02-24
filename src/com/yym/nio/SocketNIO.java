@@ -33,7 +33,7 @@ public class SocketNIO {
 
             ByteBuffer buffer = ByteBuffer.allocateDirect(4096);  //可以在堆里   堆外
 
-            //逼历已经链接进来的客户端能不能读写数据
+            //遍历已经链接进来的客户端能不能读写数据
             for (SocketChannel c : clients) {   //串行化!!!!   多线程!!
                 int num = c.read(buffer); // >0 -1 0   //不会阻塞
                 if (num > 0) {
