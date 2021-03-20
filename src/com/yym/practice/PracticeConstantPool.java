@@ -6,7 +6,7 @@ import org.junit.Test;
  * 常量池练习
  */
 public class PracticeConstantPool {
-
+    //测试
     /**
      * 两种浮点数类型的包装类Float,Double并没有实现常量池技术。
      */
