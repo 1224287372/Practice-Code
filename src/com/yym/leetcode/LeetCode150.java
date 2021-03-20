@@ -13,46 +13,41 @@ public class LeetCode150 {
         return new Solution().evalRPN(tokens);
     }
 
-    @Test
-    public void test1() {
-
-    }
-}
-
-class Solution {
-    public int evalRPN(String[] tokens) {
-        Stack<Integer> stack = new Stack<>();
-        for (String s : tokens) {
-            switch (s) {
-                case "/":
-                    Integer m2 = stack.pop();
-                    Integer m1 = stack.pop();
-                    stack.push(m1 / m2);
-                    break;
-                case "*":
-                    m2 = stack.pop();
-                    m1 = stack.pop();
-                    stack.push(m1 * m2);
-                    break;
-                case "+":
-                    m2 = stack.pop();
-                    m1 = stack.pop();
-                    stack.push(m1 + m2);
-                    break;
-                case "-":
-                    m2 = stack.pop();
-                    m1 = stack.pop();
-                    stack.push(m1 - m2);
-                    break;
-                default:
-                    Integer number = Integer.parseInt(s);
-                    //System.out.println(number);
-                    stack.push(number);
-                    break;
+    class Solution {
+        public int evalRPN(String[] tokens) {
+            Stack<Integer> stack = new Stack<>();
+            for (String s : tokens) {
+                switch (s) {
+                    case "/":
+                        Integer m2 = stack.pop();
+                        Integer m1 = stack.pop();
+                        stack.push(m1 / m2);
+                        break;
+                    case "*":
+                        m2 = stack.pop();
+                        m1 = stack.pop();
+                        stack.push(m1 * m2);
+                        break;
+                    case "+":
+                        m2 = stack.pop();
+                        m1 = stack.pop();
+                        stack.push(m1 + m2);
+                        break;
+                    case "-":
+                        m2 = stack.pop();
+                        m1 = stack.pop();
+                        stack.push(m1 - m2);
+                        break;
+                    default:
+                        Integer number = Integer.parseInt(s);
+                        //System.out.println(number);
+                        stack.push(number);
+                        break;
+                }
             }
+            Integer now = stack.pop();
+            return now;
         }
-        Integer now = stack.pop();
-        return now;
     }
 
 }
